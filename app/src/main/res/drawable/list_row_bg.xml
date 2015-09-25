@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+StoreWalk Android App
+Copyright (c) 2015 LAB Desk Technologies Inc. All rights reserved.
+Author: Ateendra Singh
+Created: February, 2014
+Version: 0.1.0
+Description: Default style for list view row
+-->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:startColor="@color/list_row_start_color"
+        android:endColor="@color/list_row_end_color"
+        android:angle="270" />
+</shape>

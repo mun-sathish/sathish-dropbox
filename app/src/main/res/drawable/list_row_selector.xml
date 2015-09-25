@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+StoreWalk Android App
+Copyright (c) 2015 LAB Desk Technologies Inc. All rights reserved.
+Author: Ateendra Singh
+Created: February, 2014
+Version: 0.1.0
+Description: Selector file to toggle the row states.
+-->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:drawable="@drawable/list_row_bg"
+        android:state_pressed="false"
+        android:state_selected="false"/>
+    <item
+        android:drawable="@drawable/list_row_bg_hover"
+        android:state_pressed="true"/>
+    <item
+        android:drawable="@drawable/list_row_bg_hover"
+        android:state_pressed="false"
+        android:state_selected="true"/>
+
+</selector>

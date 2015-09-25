@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+   <LinearLayout
+       android:layout_marginTop="10dp"
+       android:layout_marginBottom="10dp"
+       android:id="@+id/rowLayout"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content" android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" android:layout_margin="10dp">
+        <ImageView
+        android:id="@+id/fileImage"
+        android:layout_width="48dp"
+        android:layout_height="48dp" android:src="@mipmap/pdf"/>  </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical" android:layout_gravity="center_vertical" android:layout_margin="10dp">
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@color/RoyalBlue"
+        android:id="@+id/fileName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:text="CONFERENCE PAPER" />
+        <TextView
+        android:id="@+id/fileModified"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:text="CONFERENCE PAPER" /></LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" android:layout_gravity="center_vertical" android:gravity="right" android:layout_margin="10dp">
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@color/RoyalBlue"
+        android:id="@+id/fileSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"  android:text="3142.24KB" /> </LinearLayout>
+   </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp" android:background="@color/Gray" />
+</LinearLayout>
