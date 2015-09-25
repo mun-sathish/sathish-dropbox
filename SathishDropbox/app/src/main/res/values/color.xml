@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="filter_button_background_not_pressed">@color/OrangeRed</color>
-    <color name="filter_button_background_pressed">#80FF4500</color>
-
+    <color name="logout_button_background_not_pressed">#B0F26D</color>
+    <color name="logout_button_background_pressed">#40B0F26D</color>
 
     <color name="list_divider">#d9d9d9</color>
     <color name="list_row_start_color">#ffffff</color>

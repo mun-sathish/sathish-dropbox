@@ -5,8 +5,7 @@
     android:layout_height="wrap_content"
     android:background="@color/RoyalBlue"
     android:navigationIcon="@mipmap/icon"
-    app:theme="@style/AppTheme.Base"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
-    >
+    app:theme="@style/AppTheme.Base">
 
 </android.support.v7.widget.Toolbar>

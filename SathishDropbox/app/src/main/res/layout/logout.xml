@@ -1,65 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <!--<ImageButton-->
-        <!--android:id="@+id/"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="50dp"-->
-        <!--android:src="@mipmap/down_arrow"/>-->
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
-        android:textColor="@color/Black"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="20dp"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Are you sure want to Logout?"
         android:layout_gravity="center"
-        android:id="@+id/textView"/>
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="40dp"
+        android:text="Are you sure want to Logout?"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/Black" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <android.support.v7.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_margin="10dp"
+            android:layout_weight="1"
             card_view:cardBackgroundColor="@color/LightGreen"
             card_view:cardCornerRadius="10dp"
             card_view:cardElevation="2dp">
-    <Button
-        android:textColor="@color/Black"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Yes"
-        android:background="@color/LightGreen"
-        android:id="@+id/yesBtn" />
+
+            <Button
+                android:id="@+id/yesBtn"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/LightGreen"
+                android:text="Yes"
+                android:textColor="@color/Black" />
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_margin="10dp"
+            android:layout_weight="1"
             card_view:cardBackgroundColor="@color/OrangeRed"
             card_view:cardCornerRadius="10dp"
             card_view:cardElevation="2dp">
-    <Button
-        android:textColor="@color/White"
-        android:background="@color/OrangeRed"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="No"
-        android:id="@+id/noBtn" />
+
+            <Button
+                android:id="@+id/noBtn"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/OrangeRed"
+                android:text="No"
+                android:textColor="@color/White" />
         </android.support.v7.widget.CardView>
     </LinearLayout>
-    </LinearLayout>
+</LinearLayout>

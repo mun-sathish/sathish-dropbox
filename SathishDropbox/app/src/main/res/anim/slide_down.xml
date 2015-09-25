@@ -4,5 +4,3 @@
     android:fromYDelta="0"
     android:interpolator="@android:anim/decelerate_interpolator"
     android:toYDelta="100%" />
-
-    <!--android:duration="@android:integer/config_longAnimTime"-->

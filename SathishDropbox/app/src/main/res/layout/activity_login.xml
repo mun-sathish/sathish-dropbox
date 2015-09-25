@@ -1,63 +1,80 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/FloralWhite"
+    android:background="@color/White"
     android:orientation="vertical"
     tools:context="in.sathish.dropbox.main.LoginActivity">
-
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_weight="1"
-        android:src="@mipmap/icon" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center"
+        android:layout_marginBottom="73dp"
         android:layout_weight="1"
-        android:text=" Sathish\nDropbox"
+        android:text=" Sathish Dropbox"
         android:textColor="@color/Black"
         android:textSize="30dp"
+
         android:textStyle="bold" />
+    android:layout_alignParentBottom="true"
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:src="@mipmap/icon" />
+
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/exitLayout"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         card_view:cardBackgroundColor="@color/RoyalBlue"
         card_view:cardCornerRadius="10dp"
         card_view:cardElevation="5dp">
 
-    <Button
-        android:id="@+id/loginBtn"
-        android:onClick="loginBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/RoyalBlue"
-        android:text="Login"
-        android:textColor="@color/White" />
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@color/RoyalBlue"
+            android:onClick="loginBtn"
+            android:text="Login"
+            android:textColor="@color/White" />
     </android.support.v7.widget.CardView>
 
 
     <android.support.v7.widget.CardView
+        android:id="@+id/exitLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_margin="5dp"
+        android:layout_marginBottom="69dp"
         card_view:cardBackgroundColor="@color/OrangeRed"
         card_view:cardCornerRadius="10dp"
         card_view:cardElevation="5dp">
-    <Button
-        android:id="@+id/exitBtn"
-        android:onClick="exitBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/OrangeRed"
-        android:text="Exit"
-        android:textColor="@color/White" />
-</android.support.v7.widget.CardView>
-</LinearLayout>
+
+        <Button
+            android:id="@+id/exitBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/OrangeRed"
+            android:onClick="exitBtn"
+            android:text="Exit"
+            android:textColor="@color/White" />
+    </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>

@@ -1,4 +1,4 @@
-package in.sathish.dropbox.main;
+package in.sathish.dropbox.adapter;
 
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
@@ -12,21 +12,22 @@ import android.widget.TextView;
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerviewViewHolder;
 import com.marshalchen.ultimaterecyclerview.UltimateViewAdapter;
 
-
 import java.util.List;
 
 import in.sathish.dropbox.R;
+import in.sathish.dropbox.dto.BrowseContentDTO;
 
 /**
- * Created by sathish on 23/9/15.
+ * Created by Sathish Mun on 23/9/15.
  */
 public class BrowseContentAdapter extends UltimateViewAdapter {
     Activity activity;
     private List<BrowseContentDTO> allRowItemList;
     BrowseContentDTO singleRowItemList;
 
+    //constructor
     public BrowseContentAdapter(Activity activity, List<BrowseContentDTO> allRowItemList,
-                                         onBrowseAdapterListener browseAdapterListener) {
+                                onBrowseAdapterListener browseAdapterListener) {
         this.activity = activity;
         this.allRowItemList = allRowItemList;
         this.browseAdapterListener = browseAdapterListener;
@@ -39,6 +40,7 @@ public class BrowseContentAdapter extends UltimateViewAdapter {
         return new ViewHolder(v);
     }
 
+    //returns the count of the list which is also equal to count of content in the view
     @Override
     public int getAdapterItemCount() {
         return allRowItemList.size();
@@ -48,7 +50,7 @@ public class BrowseContentAdapter extends UltimateViewAdapter {
     public long generateHeaderId(int position) {
         if (position == 0) {
             return position;
-        }else{
+        } else {
             return -1;
         }
     }
@@ -56,16 +58,11 @@ public class BrowseContentAdapter extends UltimateViewAdapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
 
-        singleRowItemList = allRowItemList.get(position); //-1
+        singleRowItemList = allRowItemList.get(position);    // getting the current view single row content to be displayed
+        //sets the elements of the single element
         ((ViewHolder) viewHolder).fileName.setText(singleRowItemList.getFileName());
         ((ViewHolder) viewHolder).fileSize.setText(singleRowItemList.getFileSize());
         ((ViewHolder) viewHolder).fileModified.setText(singleRowItemList.getFileModified());
-
-//        if(singleRowItemList.getIsFolder())
-//            ((ViewHolder) viewHolder).fileModified.setText("true");
-//        else
-//            ((ViewHolder) viewHolder).fileModified.setText("false");
-
         ((ViewHolder) viewHolder).fileImage.setImageResource(singleRowItemList.getFileImage());
 
     }
@@ -83,11 +80,12 @@ public class BrowseContentAdapter extends UltimateViewAdapter {
 
     }
 
-    class ViewHolder extends UltimateRecyclerviewViewHolder implements  View.OnClickListener {
-
+    //setting up the ViewHolder Class
+    class ViewHolder extends UltimateRecyclerviewViewHolder implements View.OnClickListener {
         TextView fileName, fileSize, fileModified;
         LinearLayout layout;
         ImageView fileImage;
+
         public ViewHolder(View itemView) {
             super(itemView);
             fileName = (TextView) itemView.findViewById(R.id.fileName);
@@ -103,19 +101,20 @@ public class BrowseContentAdapter extends UltimateViewAdapter {
             //ToastMakerUtil.display(activity, "TEST: "+ getPosition(),Toast.LENGTH_SHORT);
             try {
                 switch (v.getId()) {
-                    case R.id.rowLayout:
+                    case R.id.rowLayout:   //when a content is clicked in the recyclerView
                         singleRowItemList = allRowItemList.get(getLayoutPosition()); //getPosition()
-                        if(singleRowItemList.getIsFolder())
+                        //if is a folde, then only it should further display contents, else do nothing
+                        if (singleRowItemList.getIsFolder())
                             browseAdapterListener.onClickFolder(singleRowItemList.getFilePath(), getLayoutPosition());
                         break;
-
                 }
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
-       }
+        }
     }
 
+    //setting up listener for tracking the folder been clicked and for further processes
     onBrowseAdapterListener browseAdapterListener;
     public interface onBrowseAdapterListener {
         public void onClickFolder(String pathName, int position);
